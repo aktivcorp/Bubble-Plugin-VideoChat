@@ -1,0 +1,95 @@
+{
+    "add_is_visible": true,
+    "category": "visual elements",
+    "default_dim": {
+        "height": 240,
+        "width": 640
+    },
+    "display": "VideoChat",
+    "edit_mode_image": "//s3.amazonaws.com/appforest_uf/f1526375404938x272140813292935500/exam.png",
+    "events": {
+        "AAE": {
+            "caption": "newRecord",
+            "name": "newRecord"
+        }
+    },
+    "fields": {
+        "AAb": {
+            "caption": "heightmyvideo",
+            "default_val": "",
+            "editor": "StaticText",
+            "name": "heightmyvideo",
+            "optional": true,
+            "rank": 1
+        },
+        "AAc": {
+            "caption": "widthmyvideo",
+            "editor": "StaticText",
+            "name": "widthmyvideo",
+            "optional": true,
+            "rank": 0
+        },
+        "AAd": {
+            "caption": "heightopvideo",
+            "editor": "StaticText",
+            "name": "heightopvideo",
+            "rank": 3
+        },
+        "AAe": {
+            "caption": "widthopvideo",
+            "editor": "StaticText",
+            "name": "widthopvideo",
+            "rank": 2
+        },
+        "AAf": {
+            "caption": "xmyvideo",
+            "editor": "StaticText",
+            "name": "xmyvideo",
+            "optional": true,
+            "rank": 4
+        },
+        "AAg": {
+            "caption": "ymyvideo",
+            "editor": "StaticText",
+            "name": "ymyvideo",
+            "optional": true,
+            "rank": 5
+        },
+        "AAh": {
+            "caption": "xopvideo",
+            "editor": "StaticText",
+            "name": "xopvideo",
+            "rank": 6
+        },
+        "AAi": {
+            "caption": "yopvideo",
+            "editor": "StaticText",
+            "name": "yopvideo",
+            "rank": 7
+        },
+        "AAj": {
+            "caption": "topopvideo",
+            "default_val": "1",
+            "editor": "StaticText",
+            "name": "topopvideo",
+            "rank": 8
+        }
+    },
+    "icon": "ion-android-checkbox-blank",
+    "property_applications": {
+        "MinWidth": true,
+        "resizable": true
+    },
+    "states": {
+        "AAD": {
+            "caption": "recordName",
+            "name": "recordName",
+            "value": "text"
+        },
+        "AAX": {
+            "caption": "orient",
+            "name": "orient",
+            "value": "text"
+        }
+    }
+}

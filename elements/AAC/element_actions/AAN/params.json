@@ -1,0 +1,19 @@
+{
+    "caption": "init",
+    "fields": {
+        "AAY": {
+            "caption": "fromid",
+            "editor": "DynamicValue",
+            "name": "fromid",
+            "rank": 0,
+            "value": "text"
+        },
+        "AAZ": {
+            "caption": "toid",
+            "editor": "DynamicValue",
+            "name": "toid",
+            "rank": 1,
+            "value": "text"
+        }
+    }
+}

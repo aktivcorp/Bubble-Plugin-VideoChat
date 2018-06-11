@@ -1,0 +1,13 @@
+{
+    "caption": "setQuality",
+    "fields": {
+        "AAW": {
+            "caption": "quality",
+            "default_val": "480p",
+            "editor": "DynamicValue",
+            "name": "quality",
+            "rank": 0,
+            "value": "text"
+        }
+    }
+}

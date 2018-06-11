@@ -1,0 +1,15 @@
+{
+    "dependencies": {
+        "use_jquery": true
+    },
+    "shared_keys": {
+        "AAk": {
+            "caption": "wowza_host",
+            "type": "client_safe"
+        },
+        "AAl": {
+            "caption": "api_host",
+            "type": "client_safe"
+        }
+    }
+}
