@@ -29,7 +29,5 @@ function(instance, properties, context) {
       instance.data.videoRight.css('z-index', properties.topopvideo);
     }
   }
-  instance.canvas.append(instance.data.videoRight);
-  
-  console.log(instance.data.videoRight);
+  instance.canvas.append(instance.data.videoRight); 
 }

@@ -11,6 +11,10 @@
         "AAE": {
             "caption": "newRecord",
             "name": "newRecord"
+        },
+        "AAo": {
+            "caption": "noConnection",
+            "name": "noСonnection"
         }
     },
     "fields": {
