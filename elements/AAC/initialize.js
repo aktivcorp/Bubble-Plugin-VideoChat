@@ -261,6 +261,31 @@ function(instance, context) {
             }
         };
     }
+  
+  	function checkStream(streamName, appName, lastCheck) {
+      console.log('checking '+appName+':'+streamName);
+      
+      var xhr1 = new XMLHttpRequest();  
+
+      xhr1.open("GET", 'https://'+context.keys.wowza_host+':8087/v2/servers/_defaultServer_/vhosts/_defaultVHost_/applications/'
+                    + appName + '/instances/_definst_/incomingstreams/' + streamName, true);
+	  xhr1.setRequestHeader('Accept', 'application/json; charset=utf-8');
+      xhr1.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+      xhr1.onload  = function() {
+        if (xhr1.response) {
+          console.log(xhr1.response);
+          if (xhr1.status != 200 && !lastCheck) {
+            setTimeout(function() {
+              	checkStream(streamName, appName, true);
+              }, 10000);
+          } else if (xhr1.status != 200 && lastCheck) {
+            instance.triggerEvent('noconnection');
+          }
+        }
+      };  
+
+      xhr1.send();
+    }
 
     function sendCandidate(candidate) {
     }
@@ -275,6 +300,9 @@ function(instance, context) {
         } else {
             if (sdp.type == 'offer') {
                 connection.ws.send('{"direction":"publish", "command":"sendOffer", "streamInfo":' + JSON.stringify(connection.streamInfo) + ', "sdp":' + JSON.stringify(sdp) + '}');
+              setTimeout(function() {
+              	checkStream(connection.streamInfo.streamName+'_aac', connection.streamInfo.applicationName, false);
+              },5000);
             } else {
                 connection.ws.send('{"direction":"play", "command":"sendResponse", "streamInfo":' + JSON.stringify(connection.streamInfo) + ', "sdp":' + JSON.stringify(sdp) + '}');
             }
@@ -421,6 +449,7 @@ function(instance, context) {
         });
 
         setTimeout(function() {
+            instance.data.client.subscribe('interviews');
             console.log('SockJS transport', instance.data.client.client.transport);
         }, 4000);
 
@@ -448,9 +477,7 @@ function(instance, context) {
                 }
             }
 
-        });
-
-        instance.data.client.subscribe('interviews');
+        });        
 
         return instance.data.client;
     }

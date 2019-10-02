@@ -12,9 +12,9 @@
             "caption": "newRecord",
             "name": "newRecord"
         },
-        "AAo": {
-            "caption": "noConnection",
-            "name": "noСonnection"
+        "AAp": {
+            "caption": "noconnection",
+            "name": "noconnection"
         }
     },
     "fields": {
@@ -93,6 +93,14 @@
         "AAX": {
             "caption": "orient",
             "name": "orient",
+            "value": "text"
+        },
+        "AAr": {
+            "caption": "noconnection",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "noconnection",
             "value": "text"
         }
     }
